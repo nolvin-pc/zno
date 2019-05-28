@@ -22,7 +22,7 @@ namespace ZnoModelLibrary.Implementation
 
         public async Task Delete(object id)
         {
-            var entity = await FindById(id);
+            var entity = await FindByIdAsync(id);
 
             if (entity is null)
                 throw new ArgumentException("User with the specified ID not found!!!");
@@ -40,7 +40,7 @@ namespace ZnoModelLibrary.Implementation
             return await _context.Users.ToListAsync();
         }
 
-        public async Task<ApplicationUser> FindById(object id)
+        public async Task<ApplicationUser> FindByIdAsync(object id)
         {
             return await _context.Users.FirstOrDefaultAsync(t => t.Id.Equals(id.ToString()));
         }
@@ -50,14 +50,14 @@ namespace ZnoModelLibrary.Implementation
             return await _context.Users.FirstOrDefaultAsync(u => u.Email.Equals(login) || u.PhoneNumber.Equals(login));
         }
 
-        public Task Insert(ApplicationUser entity)
+        public async Task InsertAsync(ApplicationUser entity)
         {
-            throw new NotImplementedException();
+            await _context.Users.AddAsync(entity);
         }
 
-        public async Task Update(ApplicationUser entityToUpdate)
+        public async Task UpdateAsync(ApplicationUser entityToUpdate)
         {
-            var entity = await FindById(entityToUpdate.Id);
+            var entity = await FindByIdAsync(entityToUpdate.Id);
 
             if (entity is null)
                 throw new ArgumentException("User with the specified ID not found!!!");

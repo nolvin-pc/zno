@@ -21,7 +21,7 @@ namespace ZnoModelLibrary.Implementation
 
         public async Task Delete(object id)
         {
-            var entity = await FindById(id);
+            var entity = await FindByIdAsync(id);
 
             if (entity is null)
                 throw new ArgumentException("Question with the specified ID not found!!!");
@@ -39,19 +39,19 @@ namespace ZnoModelLibrary.Implementation
             return await _context.Questions.ToListAsync();
         }
 
-        public async Task<Question> FindById(object id)
+        public async Task<Question> FindByIdAsync(object id)
         {
             return await _context.Questions.FirstOrDefaultAsync(t => t.Id == (int)id);
         }
 
-        public async Task Insert(Question entity)
+        public async Task InsertAsync(Question entity)
         {
             await _context.Questions.AddAsync(entity);
         }
 
-        public async Task Update(Question entityToUpdate)
+        public async Task UpdateAsync(Question entityToUpdate)
         {
-            var entity = await FindById(entityToUpdate.Id);
+            var entity = await FindByIdAsync(entityToUpdate.Id);
 
             if (entity is null)
                 throw new ArgumentException("Question with the specified ID not found!!!");

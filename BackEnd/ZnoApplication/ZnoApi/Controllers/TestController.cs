@@ -90,7 +90,7 @@ namespace ZnoApi.Controllers
 
             try
             {
-                await _unitOfWork.TestSettings.Insert(settings);
+                await _unitOfWork.TestSettings.InsertAsync(settings);
                 await _unitOfWork.SaveChanges();
                 _unitOfWork.Commit();
 
@@ -115,7 +115,7 @@ namespace ZnoApi.Controllers
 
             try
             {
-                await _unitOfWork.TestSettings.Update(settings);
+                await _unitOfWork.TestSettings.UpdateAsync(settings);
                 await _unitOfWork.SaveChanges();
                 _unitOfWork.Commit();
 

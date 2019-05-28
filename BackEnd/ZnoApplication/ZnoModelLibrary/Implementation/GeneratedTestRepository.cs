@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using ZnoModelLibrary.Context;
 using ZnoModelLibrary.EF;
 using ZnoModelLibrary.Entities;
 using ZnoModelLibrary.Interfaces;
@@ -12,17 +13,21 @@ namespace ZnoModelLibrary.Implementation
 {
     public class GeneratedTestRepository : IGenericRepository<GeneratedTest>
     {
-        private ApplicationContext _context;
+        private ApplicationDbContext _context;
 
-        public GeneratedTestRepository(ApplicationContext applicationContext)
+        public GeneratedTestRepository(ApplicationDbContext applicationContext)
         {
             this._context = applicationContext;
         }
-
-        public Task Delete(int id)
+        
+        public async Task Delete(object id)
         {
-            //_context.Remove(_context.GeneratedTests.Where(t => t.Id == id));
-            throw new NotImplementedException();
+            var entity = await FindByIdAsync(id);
+
+            if (entity is null)
+                throw new ArgumentException("Generated Test with the specified ID not found!!!");
+
+            _context.GeneratedTests.Remove(entity);
         }
 
         public async Task<IEnumerable<GeneratedTest>> Find(Expression<Func<GeneratedTest, bool>> predicate)
@@ -34,20 +39,25 @@ namespace ZnoModelLibrary.Implementation
         {
             return await _context.GeneratedTests.ToListAsync();
         }
-
-        public async Task<GeneratedTest> FindById(int id)
+        
+        public async Task<GeneratedTest> FindByIdAsync(object id)
         {
-            return await _context.GeneratedTests.Where(t => t.Id == id).FirstOrDefaultAsync();
+            return await _context.GeneratedTests.FirstOrDefaultAsync(s => s.Id == (int)id);
         }
 
-        public Task Insert(GeneratedTest entity)
+        public async Task InsertAsync(GeneratedTest entity)
         {
-            throw new NotImplementedException();
+            await _context.GeneratedTests.AddAsync(entity);
         }
 
-        public Task Update(GeneratedTest entityToUpdate)
+        public async Task UpdateAsync(GeneratedTest entityToUpdate)
         {
-            throw new NotImplementedException();
+            var entity = await FindByIdAsync(entityToUpdate.Id);
+
+            if (entity is null)
+                throw new ArgumentException("Generated Test with the specified ID not found!!!");
+
+            _context.Entry(entityToUpdate).State = EntityState.Modified;
         }
     }
 }

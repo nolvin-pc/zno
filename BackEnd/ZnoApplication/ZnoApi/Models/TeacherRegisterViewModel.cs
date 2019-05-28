@@ -11,6 +11,6 @@ namespace ZnoApi.Models
         [Required]
         [Display(Name = "FIO")]
         [Phone]
-        public string Fio { get; set; }
+        public string FullName { get; set; }
     }
 }

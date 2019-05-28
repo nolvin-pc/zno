@@ -12,6 +12,7 @@ namespace ZnoModelLibrary.Interfaces
         TestTypeRepository TestTypes { get; }
         QuestionRepository Questions { get; }
         AnswerTypeRepository AnswerTypes { get; }
+        GeneratedTestRepository GeneratedTests { get; }
 
         void BeginTransaction();
         void Commit();

@@ -15,16 +15,16 @@ namespace ZnoModelLibrary.Interfaces
         Task<IEnumerable<TEntity>> Find(Expression<Func<TEntity, bool>> predicate);
 
         // Поиск элемента по идентификатору
-        Task<TEntity> FindById(object id);
+        Task<TEntity> FindByIdAsync(object id);
 
         // Поиск всех элементов
         Task<IEnumerable<TEntity>> FindAll();
 
         // Вставка новой сущности
-        Task Insert(TEntity entity);
+        Task InsertAsync(TEntity entity);
 
         // Обновление сущности
-        Task Update(TEntity entityToUpdate);
+        Task UpdateAsync(TEntity entityToUpdate);
 
         // Удаление сущности по идентификатору
         Task Delete(object id);

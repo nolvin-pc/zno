@@ -20,9 +20,14 @@ namespace ZnoModelLibrary.Implementation
             this._context = applicationContext;
         }
 
-        public Task Delete(int id)
+        public async Task Delete(object id)
         {
-            throw new NotImplementedException();
+            var entity = await FindByIdAsync(id);
+
+            if (entity is null)
+                throw new ArgumentException("User answer with the specified ID not found!!!");
+
+            _context.UserAnswers.Remove(entity);
         }
 
         public async Task<IEnumerable<UserAnswer>> Find(Expression<Func<UserAnswer, bool>> predicate)
@@ -35,19 +40,24 @@ namespace ZnoModelLibrary.Implementation
             return await _context.UserAnswers.ToListAsync();
         }
 
-        public async Task<UserAnswer> FindById(int id)
+        public async Task<UserAnswer> FindByIdAsync(object id)
         {
-            return await _context.UserAnswers.Where(t => t.Id == id).FirstOrDefaultAsync();
+            return await _context.UserAnswers.Where(t => t.Id == (int)id).FirstOrDefaultAsync();
         }
 
-        public Task Insert(UserAnswer entity)
+        public async Task InsertAsync(UserAnswer entity)
         {
-            throw new NotImplementedException();
+            await _context.UserAnswers.AddAsync(entity);
         }
 
-        public Task Update(UserAnswer entityToUpdate)
+        public async Task UpdateAsync(UserAnswer entityToUpdate)
         {
-            throw new NotImplementedException();
+            var entity = await FindByIdAsync(entityToUpdate.Id);
+
+            if (entity is null)
+                throw new ArgumentException("User answer with the specified ID not found!!!");
+
+            _context.Entry(entityToUpdate).State = EntityState.Modified;
         }
     }
 }
