@@ -21,7 +21,7 @@ namespace ZnoModelLibrary.Implementation
 
         public async Task Delete(object id)
         {
-            var entity = await FindById(id);
+            var entity = await FindByIdAsync(id);
 
             if (entity is null)
                 throw new ArgumentException("Settings with the specified ID not found!!!");
@@ -39,19 +39,19 @@ namespace ZnoModelLibrary.Implementation
             return await _context.TestSettings.ToListAsync();
         }
 
-        public async Task<TestSettings> FindById(object id)
+        public async Task<TestSettings> FindByIdAsync(object id)
         {
             return await _context.TestSettings.FirstOrDefaultAsync(t => t.Id == (int)id);
         }
 
-        public async Task Insert(TestSettings entity)
+        public async Task InsertAsync(TestSettings entity)
         {
             await _context.TestSettings.AddAsync(entity);
         }
 
-        public async Task Update(TestSettings entityToUpdate)
+        public async Task UpdateAsync(TestSettings entityToUpdate)
         {
-            var entity = await FindById(entityToUpdate.Id);
+            var entity = await FindByIdAsync(entityToUpdate.Id);
 
             if (entity is null)
                 throw new ArgumentException("Settings with the specified ID not found!!!");

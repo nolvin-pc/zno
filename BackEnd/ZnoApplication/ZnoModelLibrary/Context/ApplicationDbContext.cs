@@ -52,5 +52,6 @@ namespace ZnoModelLibrary.Context
         public DbSet<QuestionContent> QuestionContents { get; set; }
         public DbSet<AnswerType> AnswerTypes { get; set; }
         public DbSet<TestSettingsAnswerType> TestSettingsAnswerTypes { get; set; }
+        public DbSet<GeneratedTest> GeneratedTests { get; set; }
     }
 }

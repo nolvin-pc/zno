@@ -22,6 +22,7 @@ namespace ZnoModelLibrary.Implementation
         private TestTypeRepository _testTypesRepository;
         private QuestionRepository _questionRepository;
         private AnswerTypeRepository _answerTypeRepository;
+        private GeneratedTestRepository _generatedTestRepository;
 
         public UserRepository Users
         {
@@ -100,6 +101,16 @@ namespace ZnoModelLibrary.Implementation
             }
         }
 
+        public GeneratedTestRepository GeneratedTests
+        {
+            get
+            {
+                if (_generatedTestRepository is null)
+                    _generatedTestRepository = new GeneratedTestRepository(_context);
+
+                return _generatedTestRepository;
+            }
+        }
         public void BeginTransaction()
         {
             _transaction = _context.Database.BeginTransaction();

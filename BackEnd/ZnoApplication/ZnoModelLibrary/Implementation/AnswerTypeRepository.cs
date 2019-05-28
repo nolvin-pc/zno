@@ -21,7 +21,7 @@ namespace ZnoModelLibrary.Implementation
 
         public async Task Delete(object id)
         {
-            var entity = await FindById(id);
+            var entity = await FindByIdAsync(id);
 
             if (entity is null)
                 throw new ArgumentException("Answer Type with the specified ID not found!!!");
@@ -39,19 +39,19 @@ namespace ZnoModelLibrary.Implementation
             return await _context.AnswerTypes.ToListAsync();
         }
 
-        public async Task<AnswerType> FindById(object id)
+        public async Task<AnswerType> FindByIdAsync(object id)
         {
             return await _context.AnswerTypes.FirstOrDefaultAsync(s => s.Id == (int)id);
         }
 
-        public async Task Insert(AnswerType entity)
+        public async Task InsertAsync(AnswerType entity)
         {
             await _context.AnswerTypes.AddAsync(entity);
         }
 
-        public async Task Update(AnswerType entityToUpdate)
+        public async Task UpdateAsync(AnswerType entityToUpdate)
         {
-            var entity = await FindById(entityToUpdate.Id);
+            var entity = await FindByIdAsync(entityToUpdate.Id);
 
             if (entity is null)
                 throw new ArgumentException("Answer Type with the specified ID not found!!!");

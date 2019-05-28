@@ -72,7 +72,8 @@ namespace ZnoApi.Controllers
                 Random r = new Random();
                 for (int i = 0; i < testSetting.AnswerTypes.Count(); i++)
                 {
-                    var questionsOfOneType = questionsAll.ToList().Where(q => q.AnswerType == testSetting.AnswerTypes.ToList()[i]);
+                    var questionsOfOneType = questionsAll.ToList()
+                        .Where(q => q.AnswerType == testSetting.AnswerTypes.ToList()[i].AnswerType);
 
                     for (int q = 0; q < testSetting.NumberOfQuestions; q++)
                     {
@@ -87,8 +88,8 @@ namespace ZnoApi.Controllers
                 _unitOfWork.BeginTransaction();
                 try
                 {
-                    await _unitOfWork.GeneratedTests.Insert(generatedTest);
-                    _unitOfWork.Save();
+                    await _unitOfWork.GeneratedTests.InsertAsync(generatedTest);
+                    await _unitOfWork.SaveChanges();
                     _unitOfWork.Commit();
                     return Ok(generatedTest.Questions);
                 }
@@ -115,8 +116,8 @@ namespace ZnoApi.Controllers
         [HttpPost]
         public async Task<IActionResult> SavingAnswer(int questionId, object answer, int generatedTestId)
         {
-            var generatedTest = await _unitOfWork.GeneratedTests.FindById(generatedTestId);
-            var question = await _unitOfWork.Questions.FindById(questionId);
+            var generatedTest = await _unitOfWork.GeneratedTests.FindByIdAsync(generatedTestId);
+            var question = await _unitOfWork.Questions.FindByIdAsync(questionId);
 
             // Если текущее время не вышло за пределы доступные на тест
             if (DateTime.Now < generatedTest.EndTime)
@@ -134,8 +135,8 @@ namespace ZnoApi.Controllers
                 _unitOfWork.BeginTransaction();
                 try
                 {
-                    await _unitOfWork.GeneratedTests.Update(generatedTest);
-                    _unitOfWork.Save();
+                    await _unitOfWork.GeneratedTests.UpdateAsync(generatedTest);
+                    await _unitOfWork.SaveChanges();
                     _unitOfWork.Commit();
                     return Ok();
                 }
@@ -149,8 +150,6 @@ namespace ZnoApi.Controllers
             {
                 return BadRequest("Time to test out.");
             }
-
-            return BadRequest();
         }
 
         /// <summary>
@@ -162,7 +161,7 @@ namespace ZnoApi.Controllers
         [HttpGet]
         public async Task<IActionResult> CompletingTestAndGetResult(int generatedTestId)
         {
-            var generatedTest = await _unitOfWork.GeneratedTests.FindById(generatedTestId);
+            var generatedTest = await _unitOfWork.GeneratedTests.FindByIdAsync(generatedTestId);
 
             // Меняем статус на false (закончили тест)
             generatedTest.Status = false;
@@ -170,7 +169,7 @@ namespace ZnoApi.Controllers
             // Увеличиваем сумму баллов, если ответ пользователя и правильный совпадают
             for(int i = 0; i < generatedTest.Answers.ToList().Count(); i++)
             {
-                if (generatedTest.Answers.ToList()[i].Question.AnswerType != AnswerType.Task)
+                if (generatedTest.Answers.ToList()[i].Question.AnswerType.Name != "Task")
                 {
                     if(generatedTest.Answers.ToList()[i].Answer== generatedTest.Answers.ToList()[i].Question.AnswerJson)
                     {
@@ -183,8 +182,8 @@ namespace ZnoApi.Controllers
             _unitOfWork.BeginTransaction();
             try
             {
-                await _unitOfWork.GeneratedTests.Update(generatedTest);
-                _unitOfWork.Save();
+                await _unitOfWork.GeneratedTests.UpdateAsync(generatedTest);
+                await _unitOfWork.SaveChanges();
                 _unitOfWork.Commit();
                 return Ok(generatedTest.Score);
             }
@@ -204,7 +203,7 @@ namespace ZnoApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetRemainingTime(int generatedTestId)
         {
-            var generatedTest = await _unitOfWork.GeneratedTests.FindById(generatedTestId);
+            var generatedTest = await _unitOfWork.GeneratedTests.FindByIdAsync(generatedTestId);
             if (DateTime.Now > generatedTest.EndTime)
             {
                 return BadRequest("Time to test out.");
