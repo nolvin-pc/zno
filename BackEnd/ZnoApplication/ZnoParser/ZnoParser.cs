@@ -7,13 +7,13 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using ZnoModelLibrary.Context;
-using ZnoModelLibrary.Entities;
-using ZnoModelLibrary.Implementation;
-using ZnoModelLibrary.Interfaces;
-using ZnoParser.Models;
+using Zno.DAL.Context;
+using Zno.DAL.Entities;
+using Zno.DAL.Implementation;
+using Zno.DAL.Interfaces;
+using Zno.Parser.Models;
 
-namespace ZnoParser
+namespace Zno.Parser
 {
     public class ZnoParser
     {
@@ -69,7 +69,7 @@ namespace ZnoParser
                     {
                         var newSubject = new Subject();
                         newSubject.Name = currentSubject.Name;
-                        await _unitOfWork.Subjects.InsertAsync(newSubject);
+                        await _unitOfWork.Subjects.Insert(newSubject);
 
                         await _unitOfWork.SaveChanges();
 
@@ -81,7 +81,7 @@ namespace ZnoParser
                             {
                                 var newTestType = new TestType();
                                 newTestType.Name = test.Type;
-                                await _unitOfWork.TestTypes.InsertAsync(newTestType);
+                                await _unitOfWork.TestTypes.Insert(newTestType);
                                 await _unitOfWork.SaveChanges();
                             }
 
@@ -92,7 +92,7 @@ namespace ZnoParser
                                 newTest.Type = (await _unitOfWork.TestTypes.Find(t => t.Name == test.Type)).FirstOrDefault();
                                 newTest.Year = test.Year;
 
-                                await _unitOfWork.Tests.InsertAsync(newTest);
+                                await _unitOfWork.Tests.Insert(newTest);
                                 await _unitOfWork.SaveChanges();
                             }
                             catch (Exception ex)

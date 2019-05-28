@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
 using System.Threading.Tasks;
-using ZnoModelLibrary.Context;
-using ZnoModelLibrary.Interfaces;
+using Zno.DAL.Context;
+using Zno.DAL.Interfaces;
 
-namespace ZnoModelLibrary.Implementation
+namespace Zno.DAL.Implementation
 {
     public class MySqlUnitOfWork : IUnitOfWork
     {
@@ -21,8 +21,7 @@ namespace ZnoModelLibrary.Implementation
         private TestSettingsRepository _testSettingsRepository;
         private TestTypeRepository _testTypesRepository;
         private QuestionRepository _questionRepository;
-        private AnswerTypeRepository _answerTypeRepository;
-        private GeneratedTestRepository _generatedTestRepository;
+        private QuestionTypeRepository _questionTypeRepository;
 
         public UserRepository Users
         {
@@ -90,27 +89,17 @@ namespace ZnoModelLibrary.Implementation
             }
         }
 
-        public AnswerTypeRepository AnswerTypes
+        public QuestionTypeRepository QuestionTypes
         {
             get
             {
-                if (_answerTypeRepository is null)
-                    _answerTypeRepository = new AnswerTypeRepository(_context);
+                if (_questionTypeRepository is null)
+                    _questionTypeRepository = new QuestionTypeRepository(_context);
 
-                return _answerTypeRepository;
+                return _questionTypeRepository;
             }
         }
 
-        public GeneratedTestRepository GeneratedTests
-        {
-            get
-            {
-                if (_generatedTestRepository is null)
-                    _generatedTestRepository = new GeneratedTestRepository(_context);
-
-                return _generatedTestRepository;
-            }
-        }
         public void BeginTransaction()
         {
             _transaction = _context.Database.BeginTransaction();

@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using ZnoModelLibrary.Context;
-using ZnoModelLibrary.Entities;
-using ZnoModelLibrary.Interfaces;
+using Zno.DAL.Context;
+using Zno.DAL.Entities;
+using Zno.DAL.Interfaces;
 
-namespace ZnoModelLibrary.Implementation
+namespace Zno.DAL.Implementation
 {
     public class TestSettingsRepository : IGenericRepository<TestSettings>
     {
@@ -21,7 +21,7 @@ namespace ZnoModelLibrary.Implementation
 
         public async Task Delete(object id)
         {
-            var entity = await FindByIdAsync(id);
+            var entity = await FindById(id);
 
             if (entity is null)
                 throw new ArgumentException("Settings with the specified ID not found!!!");
@@ -39,19 +39,38 @@ namespace ZnoModelLibrary.Implementation
             return await _context.TestSettings.ToListAsync();
         }
 
-        public async Task<TestSettings> FindByIdAsync(object id)
+        public async Task<TestSettings> FindById(object id)
         {
             return await _context.TestSettings.FirstOrDefaultAsync(t => t.Id == (int)id);
         }
 
-        public async Task InsertAsync(TestSettings entity)
+        public async Task Insert(TestSettings entity)
         {
+            var subject = await _context.Subjects.FirstOrDefaultAsync(s => s.Id == entity.Subject.Id);
+            entity.Subject = subject;
+
+            var tests = new List<Test>();
+
+            foreach (var rawTest in entity.Tests)
+            {
+                var test = await _context.Tests.FirstOrDefaultAsync(t => t.Id == rawTest.Id);
+                tests.Add(test);
+            }
+
+            entity.Tests = tests;
+
             await _context.TestSettings.AddAsync(entity);
+
+            foreach (var questionType in entity.QuestionTypes)
+            {
+                questionType.TestSettings = entity;
+                questionType.TestSettingsId = entity.Id;
+            }
         }
 
-        public async Task UpdateAsync(TestSettings entityToUpdate)
+        public async Task Update(TestSettings entityToUpdate)
         {
-            var entity = await FindByIdAsync(entityToUpdate.Id);
+            var entity = await FindById(entityToUpdate.Id);
 
             if (entity is null)
                 throw new ArgumentException("Settings with the specified ID not found!!!");

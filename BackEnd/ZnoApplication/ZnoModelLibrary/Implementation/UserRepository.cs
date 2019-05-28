@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using ZnoModelLibrary.Abstraction;
-using ZnoModelLibrary.Context;
-using ZnoModelLibrary.Entities;
-using ZnoModelLibrary.Interfaces;
+using Zno.DAL.Abstraction;
+using Zno.DAL.Context;
+using Zno.DAL.Entities;
+using Zno.DAL.Interfaces;
 
-namespace ZnoModelLibrary.Implementation
+namespace Zno.DAL.Implementation
 {
     public class UserRepository : IGenericRepository<ApplicationUser>, IUserRepository<ApplicationUser>
     {
@@ -22,7 +22,7 @@ namespace ZnoModelLibrary.Implementation
 
         public async Task Delete(object id)
         {
-            var entity = await FindByIdAsync(id);
+            var entity = await FindById(id);
 
             if (entity is null)
                 throw new ArgumentException("User with the specified ID not found!!!");
@@ -40,7 +40,7 @@ namespace ZnoModelLibrary.Implementation
             return await _context.Users.ToListAsync();
         }
 
-        public async Task<ApplicationUser> FindByIdAsync(object id)
+        public async Task<ApplicationUser> FindById(object id)
         {
             return await _context.Users.FirstOrDefaultAsync(t => t.Id.Equals(id.ToString()));
         }
@@ -50,14 +50,14 @@ namespace ZnoModelLibrary.Implementation
             return await _context.Users.FirstOrDefaultAsync(u => u.Email.Equals(login) || u.PhoneNumber.Equals(login));
         }
 
-        public async Task InsertAsync(ApplicationUser entity)
+        public Task Insert(ApplicationUser entity)
         {
-            await _context.Users.AddAsync(entity);
+            throw new NotImplementedException();
         }
 
-        public async Task UpdateAsync(ApplicationUser entityToUpdate)
+        public async Task Update(ApplicationUser entityToUpdate)
         {
-            var entity = await FindByIdAsync(entityToUpdate.Id);
+            var entity = await FindById(entityToUpdate.Id);
 
             if (entity is null)
                 throw new ArgumentException("User with the specified ID not found!!!");

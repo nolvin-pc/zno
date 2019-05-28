@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using ZnoModelLibrary.Context;
-using ZnoModelLibrary.Entities;
-using ZnoModelLibrary.Interfaces;
+using Zno.DAL.Context;
+using Zno.DAL.Entities;
+using Zno.DAL.Interfaces;
 
-namespace ZnoModelLibrary.Implementation
+namespace Zno.DAL.Implementation
 {
     public class TestTypeRepository : IGenericRepository<TestType>
     {
@@ -21,7 +21,7 @@ namespace ZnoModelLibrary.Implementation
 
         public async Task Delete(object id)
         {
-            var entity = await FindByIdAsync(id);
+            var entity = await FindById(id);
 
             if (entity is null)
                 throw new ArgumentException("Test type with the specified ID not found!!!");
@@ -39,19 +39,19 @@ namespace ZnoModelLibrary.Implementation
             return await _context.TestTypes.ToListAsync();
         }
 
-        public async Task<TestType> FindByIdAsync(object id)
+        public async Task<TestType> FindById(object id)
         {
             return await _context.TestTypes.FirstOrDefaultAsync(t => t.Id == (int)id);
         }
 
-        public async Task InsertAsync(TestType entity)
+        public async Task Insert(TestType entity)
         {
             await _context.TestTypes.AddAsync(entity);
         }
 
-        public async Task UpdateAsync(TestType entityToUpdate)
+        public async Task Update(TestType entityToUpdate)
         {
-            var entity = await FindByIdAsync(entityToUpdate.Id);
+            var entity = await FindById(entityToUpdate.Id);
 
             if (entity is null)
                 throw new ArgumentException("Test type with the specified ID not found!!!");
