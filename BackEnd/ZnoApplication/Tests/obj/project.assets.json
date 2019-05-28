@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\Tests\\Tests.csproj",
+      "projectUniqueName": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\Tests\\Tests.csproj",
+      "projectPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\Tests\\Tests.csproj",
       "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\Tests\\obj\\",
+      "outputPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

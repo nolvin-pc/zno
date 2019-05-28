@@ -13555,11 +13555,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoApi\\ZnoApi.csproj",
+      "projectUniqueName": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoApi\\ZnoApi.csproj",
       "projectName": "ZnoApi",
-      "projectPath": "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoApi\\ZnoApi.csproj",
+      "projectPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoApi\\ZnoApi.csproj",
       "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoApi\\obj\\",
+      "outputPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13578,11 +13578,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj": {
-              "projectPath": "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj"
+            "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj": {
+              "projectPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj"
             },
-            "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoParser\\ZnoParser.csproj": {
-              "projectPath": "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoParser\\ZnoParser.csproj"
+            "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoParser\\ZnoParser.csproj": {
+              "projectPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoParser\\ZnoParser.csproj"
             }
           }
         }

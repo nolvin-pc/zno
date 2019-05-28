@@ -6385,11 +6385,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoParser\\ZnoParser.csproj",
+      "projectUniqueName": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoParser\\ZnoParser.csproj",
       "projectName": "ZnoParser",
-      "projectPath": "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoParser\\ZnoParser.csproj",
+      "projectPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoParser\\ZnoParser.csproj",
       "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoParser\\obj\\",
+      "outputPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoParser\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6408,8 +6408,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj": {
-              "projectPath": "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj"
+            "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj": {
+              "projectPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj"
             }
           }
         }

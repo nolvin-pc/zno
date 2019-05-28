@@ -4426,11 +4426,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj",
       "projectName": "ZnoModelLibrary",
-      "projectPath": "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj",
+      "projectPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj",
       "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\student\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\obj\\",
+      "outputPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
