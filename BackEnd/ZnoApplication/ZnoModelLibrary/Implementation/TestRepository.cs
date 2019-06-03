@@ -21,7 +21,7 @@ namespace Zno.DAL.Implementation
 
         public async Task Delete(object id)
         {
-            var entity = await FindByIdAsync(id);
+            var entity = await FindById(id);
 
             if (entity is null)
                 throw new ArgumentException("Test with the specified ID not found!!!");
@@ -45,7 +45,7 @@ namespace Zno.DAL.Implementation
                 .ToListAsync();
         }
 
-        public async Task<Test> FindByIdAsync(object id)
+        public async Task<Test> FindById(object id)
         {
             return await _context.Tests
                 .Include(t => t.Type)
@@ -53,14 +53,14 @@ namespace Zno.DAL.Implementation
                 .FirstOrDefaultAsync(t => t.Id == (int)id);
         }
 
-        public async Task InsertAsync(Test entity)
+        public async Task Insert(Test entity)
         {
             await _context.Tests.AddAsync(entity);
         }
 
-        public async Task UpdateAsync(Test entityToUpdate)
+        public async Task Update(Test entityToUpdate)
         {
-            var entity = await FindByIdAsync(entityToUpdate.Id);
+            var entity = await FindById(entityToUpdate.Id);
 
             if (entity is null)
                 throw new ArgumentException("Test with the specified ID not found!!!");

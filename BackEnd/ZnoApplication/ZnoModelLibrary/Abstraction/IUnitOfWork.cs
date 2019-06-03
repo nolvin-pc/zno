@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using ZnoModelLibrary.Implementation;
+using Zno.DAL.Implementation;
 
-namespace ZnoModelLibrary.Interfaces
+namespace Zno.DAL.Interfaces
 {
     public interface IUnitOfWork
     {
@@ -11,8 +11,10 @@ namespace ZnoModelLibrary.Interfaces
         TestSettingsRepository TestSettings { get; }
         TestTypeRepository TestTypes { get; }
         QuestionRepository Questions { get; }
-        AnswerTypeRepository AnswerTypes { get; }
+        QuestionTypeRepository QuestionTypes { get; }
         GeneratedTestRepository GeneratedTests { get; }
+        AnswerRepository Answers { get; }
+        UserAnswerRepository UserAnswers { get; }
 
         void BeginTransaction();
         void Commit();

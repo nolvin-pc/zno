@@ -11,7 +11,7 @@ namespace Zno.Server.Controllers
     /// <summary>
     /// Контроллер для работы с тестом и его настройками
     /// </summary>
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     [EnableCors("AllowSpecificOrigin")]
     [Produces("application/json")]
     [Route("api/v1/[controller]/[action]")]
@@ -90,7 +90,7 @@ namespace Zno.Server.Controllers
 
             try
             {
-                await _unitOfWork.TestSettings.InsertAsync(settings);
+                await _unitOfWork.TestSettings.Insert(settings);
                 await _unitOfWork.SaveChanges();
                 _unitOfWork.Commit();
 
@@ -109,13 +109,13 @@ namespace Zno.Server.Controllers
         /// <param name="settings"></param>
         /// <returns></returns>
         [HttpPut]
-        public async Task<IActionResult> UpdateTestSettings(TestSettings settings)
+        public async Task<IActionResult> UpdateTestSettings([FromBody]TestSettings settings)
         {
             _unitOfWork.BeginTransaction();
 
             try
             {
-                await _unitOfWork.TestSettings.UpdateAsync(settings);
+                await _unitOfWork.TestSettings.Update(settings);
                 await _unitOfWork.SaveChanges();
                 _unitOfWork.Commit();
 

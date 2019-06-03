@@ -22,7 +22,7 @@ namespace Zno.DAL.Entities
         /// Тип вопроса
         /// </summary>
         [Required]
-        public QuestionType AnswerType { get; set; }
+        public QuestionType QuestionType { get; set; }
 
         /// <summary>
         /// Тест к которому относиться данный вопрос
@@ -31,7 +31,7 @@ namespace Zno.DAL.Entities
         public Test Test { get; set; }
 
         /// <summary>
-        /// Содержимое вопроса
+        /// Ответы на вопрос
         /// </summary>
         [Required]
         public IList<Answer> Answers { get; set; }

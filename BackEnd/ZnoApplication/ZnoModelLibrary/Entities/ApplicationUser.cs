@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace ZnoModelLibrary.Entities
+namespace Zno.DAL.Entities
 {
     /// <summary>
     ///  Модель "пользователь"
@@ -11,9 +11,5 @@ namespace ZnoModelLibrary.Entities
         /// Статус (в сети, не в сети, в тестировании)
         /// </summary>
         public Status Status { get; set; }
-        /// <summary>
-        /// Полное имя пользователя
-        /// </summary>
-        public string FullName { get; set; }
     }
 }

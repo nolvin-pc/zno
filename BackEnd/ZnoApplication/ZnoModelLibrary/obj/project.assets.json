@@ -4420,23 +4420,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\student\\.nuget\\packages\\": {},
+    "C:\\Users\\Nolvin\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj",
-      "projectName": "ZnoModelLibrary",
-      "projectPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj",
-      "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\obj\\",
+      "projectUniqueName": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\Zno.DAL.csproj",
+      "projectName": "Zno.DAL",
+      "projectPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\Zno.DAL.csproj",
+      "packagesPath": "C:\\Users\\Nolvin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nolvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4462,27 +4465,27 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
-            "version": "[2.2.0, )"
+            "version": "2.2.0"
           },
-          "Microsoft.EntityFrameworkCore.SqlServer": {
+          "Microsoft.Extensions.Identity.Stores": {
             "target": "Package",
-            "version": "[2.2.4, )"
+            "version": "2.2.0"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.2.4, )"
-          },
-          "Microsoft.Extensions.Identity.Stores": {
-            "target": "Package",
-            "version": "[2.2.0, )"
+            "version": "2.2.4"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0",
             "autoReferenced": true
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "2.2.4"
           }
         },
         "imports": [

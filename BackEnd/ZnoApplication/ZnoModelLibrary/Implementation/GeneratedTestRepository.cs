@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Text;
 using System.Threading.Tasks;
-using ZnoModelLibrary.Context;
-using ZnoModelLibrary.EF;
-using ZnoModelLibrary.Entities;
-using ZnoModelLibrary.Interfaces;
+using Zno.DAL.Context;
+using Zno.DAL.Entities;
+using Zno.DAL.Interfaces;
 
-namespace ZnoModelLibrary.Implementation
+namespace Zno.DAL.Implementation
 {
     public class GeneratedTestRepository : IGenericRepository<GeneratedTest>
     {
@@ -19,10 +19,10 @@ namespace ZnoModelLibrary.Implementation
         {
             this._context = applicationContext;
         }
-        
+
         public async Task Delete(object id)
         {
-            var entity = await FindByIdAsync(id);
+            var entity = await FindById(id);
 
             if (entity is null)
                 throw new ArgumentException("Generated Test with the specified ID not found!!!");
@@ -39,20 +39,20 @@ namespace ZnoModelLibrary.Implementation
         {
             return await _context.GeneratedTests.ToListAsync();
         }
-        
-        public async Task<GeneratedTest> FindByIdAsync(object id)
+
+        public async Task<GeneratedTest> FindById(object id)
         {
             return await _context.GeneratedTests.FirstOrDefaultAsync(s => s.Id == (int)id);
         }
 
-        public async Task InsertAsync(GeneratedTest entity)
+        public async Task Insert(GeneratedTest entity)
         {
             await _context.GeneratedTests.AddAsync(entity);
         }
 
-        public async Task UpdateAsync(GeneratedTest entityToUpdate)
+        public async Task Update(GeneratedTest entityToUpdate)
         {
-            var entity = await FindByIdAsync(entityToUpdate.Id);
+            var entity = await FindById(entityToUpdate.Id);
 
             if (entity is null)
                 throw new ArgumentException("Generated Test with the specified ID not found!!!");

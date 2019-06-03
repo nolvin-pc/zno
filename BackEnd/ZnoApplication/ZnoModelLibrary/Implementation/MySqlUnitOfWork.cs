@@ -22,6 +22,9 @@ namespace Zno.DAL.Implementation
         private TestTypeRepository _testTypesRepository;
         private QuestionRepository _questionRepository;
         private QuestionTypeRepository _questionTypeRepository;
+        private GeneratedTestRepository _generatedTestRepository;
+        private AnswerRepository _answerRepository;
+        private UserAnswerRepository _userAnswerRepository;
 
         public UserRepository Users
         {
@@ -97,6 +100,39 @@ namespace Zno.DAL.Implementation
                     _questionTypeRepository = new QuestionTypeRepository(_context);
 
                 return _questionTypeRepository;
+            }
+        }
+
+        public GeneratedTestRepository GeneratedTests
+        {
+            get
+            {
+                if (_generatedTestRepository is null)
+                    _generatedTestRepository = new GeneratedTestRepository(_context);
+
+                return _generatedTestRepository;
+            }
+        }
+
+        public AnswerRepository Answers
+        {
+            get
+            {
+                if (_answerRepository is null)
+                    _answerRepository = new AnswerRepository(_context);
+
+                return _answerRepository;
+            }
+        }
+
+        public UserAnswerRepository UserAnswers
+        {
+            get
+            {
+                if (_userAnswerRepository is null)
+                    _userAnswerRepository = new UserAnswerRepository(_context);
+
+                return _userAnswerRepository;
             }
         }
 

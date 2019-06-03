@@ -2008,7 +2008,7 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "ZnoModelLibrary/1.0.0": {
+      "Zno.DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
@@ -2017,10 +2017,10 @@
           "Microsoft.Extensions.Identity.Stores": "2.2.0"
         },
         "compile": {
-          "bin/placeholder/ZnoModelLibrary.dll": {}
+          "bin/placeholder/Zno.DAL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ZnoModelLibrary.dll": {}
+          "bin/placeholder/Zno.DAL.dll": {}
         }
       }
     }
@@ -4405,11 +4405,10 @@
       ]
     },
     "System.Net.Http/4.3.2": {
-      "sha512": "4HYUu8WuiSCNZifYY2wDn27dESG43gGNOSv0Eg1vdu/wSsRs5Gg90IdWjA+yAaGBGBBKneziNPeVd8mhEz82vg==",
+      "sha512": "y7hv0o0weI0j0mvEcBOdt1F3CAADiWlcw3e54m8TfYiRmBPDIsHElx8QUPDlY4x6yWXKPGN0Z2TuXCTPgkm5WQ==",
       "type": "package",
       "path": "system.net.http/4.3.2",
       "files": [
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/Xamarinmac20/_._",
@@ -6364,10 +6363,10 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "ZnoModelLibrary/1.0.0": {
+    "Zno.DAL/1.0.0": {
       "type": "project",
-      "path": "../ZnoModelLibrary/ZnoModelLibrary.csproj",
-      "msbuildProject": "../ZnoModelLibrary/ZnoModelLibrary.csproj"
+      "path": "../ZnoModelLibrary/Zno.DAL.csproj",
+      "msbuildProject": "../ZnoModelLibrary/Zno.DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6375,27 +6374,30 @@
       "HtmlAgilityPack >= 1.11.4",
       "HtmlAgilityPack.CssSelectors.NetCore >= 1.1.1",
       "Microsoft.NETCore.App >= 2.0.0",
-      "ZnoModelLibrary >= 1.0.0"
+      "Zno.DAL >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\student\\.nuget\\packages\\": {},
+    "C:\\Users\\Nolvin\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoParser\\ZnoParser.csproj",
-      "projectName": "ZnoParser",
-      "projectPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoParser\\ZnoParser.csproj",
-      "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoParser\\obj\\",
+      "projectUniqueName": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoParser\\Zno.Parser.csproj",
+      "projectName": "Zno.Parser",
+      "projectPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoParser\\Zno.Parser.csproj",
+      "packagesPath": "C:\\Users\\Nolvin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoParser\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nolvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6408,8 +6410,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj": {
-              "projectPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj"
+            "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\Zno.DAL.csproj": {
+              "projectPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\Zno.DAL.csproj"
             }
           }
         }
@@ -6423,19 +6425,19 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "HtmlAgilityPack": {
-            "target": "Package",
-            "version": "[1.11.4, )"
-          },
           "HtmlAgilityPack.CssSelectors.NetCore": {
             "target": "Package",
-            "version": "[1.1.1, )"
+            "version": "1.1.1"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0",
             "autoReferenced": true
+          },
+          "HtmlAgilityPack": {
+            "target": "Package",
+            "version": "1.11.4"
           }
         },
         "imports": [

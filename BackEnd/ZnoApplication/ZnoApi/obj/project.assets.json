@@ -5133,7 +5133,7 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
-      "ZnoModelLibrary/1.0.0": {
+      "Zno.DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
@@ -5142,25 +5142,25 @@
           "Microsoft.Extensions.Identity.Stores": "2.2.0"
         },
         "compile": {
-          "bin/placeholder/ZnoModelLibrary.dll": {}
+          "bin/placeholder/Zno.DAL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ZnoModelLibrary.dll": {}
+          "bin/placeholder/Zno.DAL.dll": {}
         }
       },
-      "ZnoParser/1.0.0": {
+      "Zno.Parser/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
           "HtmlAgilityPack": "1.11.4",
           "HtmlAgilityPack.CssSelectors.NetCore": "1.1.1",
-          "ZnoModelLibrary": "1.0.0"
+          "Zno.DAL": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/ZnoParser.dll": {}
+          "bin/placeholder/Zno.Parser.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ZnoParser.dll": {}
+          "bin/placeholder/Zno.Parser.dll": {}
         }
       }
     }
@@ -10598,11 +10598,10 @@
       ]
     },
     "System.Net.Http/4.3.2": {
-      "sha512": "4HYUu8WuiSCNZifYY2wDn27dESG43gGNOSv0Eg1vdu/wSsRs5Gg90IdWjA+yAaGBGBBKneziNPeVd8mhEz82vg==",
+      "sha512": "y7hv0o0weI0j0mvEcBOdt1F3CAADiWlcw3e54m8TfYiRmBPDIsHElx8QUPDlY4x6yWXKPGN0Z2TuXCTPgkm5WQ==",
       "type": "package",
       "path": "system.net.http/4.3.2",
       "files": [
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/Xamarinmac20/_._",
@@ -13525,15 +13524,15 @@
         "windowsazure.storage.nuspec"
       ]
     },
-    "ZnoModelLibrary/1.0.0": {
+    "Zno.DAL/1.0.0": {
       "type": "project",
-      "path": "../ZnoModelLibrary/ZnoModelLibrary.csproj",
-      "msbuildProject": "../ZnoModelLibrary/ZnoModelLibrary.csproj"
+      "path": "../ZnoModelLibrary/Zno.DAL.csproj",
+      "msbuildProject": "../ZnoModelLibrary/Zno.DAL.csproj"
     },
-    "ZnoParser/1.0.0": {
+    "Zno.Parser/1.0.0": {
       "type": "project",
-      "path": "../ZnoParser/ZnoParser.csproj",
-      "msbuildProject": "../ZnoParser/ZnoParser.csproj"
+      "path": "../ZnoParser/Zno.Parser.csproj",
+      "msbuildProject": "../ZnoParser/Zno.Parser.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13544,28 +13543,31 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.4",
       "Pomelo.EntityFrameworkCore.MySql >= 2.2.0",
       "Swashbuckle.AspNetCore >= 4.0.1",
-      "ZnoModelLibrary >= 1.0.0",
-      "ZnoParser >= 1.0.0"
+      "Zno.DAL >= 1.0.0",
+      "Zno.Parser >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\student\\.nuget\\packages\\": {},
+    "C:\\Users\\Nolvin\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoApi\\ZnoApi.csproj",
-      "projectName": "ZnoApi",
-      "projectPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoApi\\ZnoApi.csproj",
-      "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoApi\\obj\\",
+      "projectUniqueName": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoApi\\Zno.Server.csproj",
+      "projectName": "Zno.Server",
+      "projectPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoApi\\Zno.Server.csproj",
+      "packagesPath": "C:\\Users\\Nolvin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nolvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13578,11 +13580,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj": {
-              "projectPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\ZnoModelLibrary.csproj"
+            "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\Zno.DAL.csproj": {
+              "projectPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\Zno.DAL.csproj"
             },
-            "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoParser\\ZnoParser.csproj": {
-              "projectPath": "C:\\Users\\student\\Desktop\\zno1\\BackEnd\\ZnoApplication\\ZnoParser\\ZnoParser.csproj"
+            "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoParser\\Zno.Parser.csproj": {
+              "projectPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoParser\\Zno.Parser.csproj"
             }
           }
         }
@@ -13596,30 +13598,30 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.All": {
+          "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
-            "version": "[2.0.9, )"
+            "version": "2.2.0"
           },
           "Microsoft.AspNetCore.Razor": {
             "target": "Package",
-            "version": "[2.2.0, )"
-          },
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "[2.0.0, )",
-            "autoReferenced": true
+            "version": "2.2.0"
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
-            "version": "[2.0.4, )"
+            "version": "2.0.4"
           },
-          "Pomelo.EntityFrameworkCore.MySql": {
+          "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "[2.2.0, )"
+            "version": "2.0",
+            "autoReferenced": true
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
-            "version": "[4.0.1, )"
+            "version": "4.0.1"
+          },
+          "Microsoft.AspNetCore.All": {
+            "target": "Package",
+            "version": "2.0.9"
           }
         },
         "imports": [

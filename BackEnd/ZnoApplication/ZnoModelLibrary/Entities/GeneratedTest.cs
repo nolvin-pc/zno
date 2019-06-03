@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace ZnoModelLibrary.Entities
+namespace Zno.DAL.Entities
 {
     public class GeneratedTest
     {
@@ -22,5 +22,11 @@ namespace ZnoModelLibrary.Entities
         public bool Status { get; set; } = true;
         public int CurrentPosition { get; set; } = 0;
         public int Score { get; set; }
+
+        public GeneratedTest()
+        {
+            Answers = new List<UserAnswer>();
+            Questions = new List<Question>();
+        }
     }
 }

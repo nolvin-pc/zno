@@ -5,27 +5,27 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using ZnoModelLibrary.EF;
-using ZnoModelLibrary.Entities;
-using ZnoModelLibrary.Interfaces;
+using Zno.DAL.Context;
+using Zno.DAL.Entities;
+using Zno.DAL.Interfaces;
 
-namespace ZnoModelLibrary.Implementation
+namespace Zno.DAL.Implementation
 {
     public class UserAnswerRepository : IGenericRepository<UserAnswer>
     {
-        private ApplicationContext _context;
+        private ApplicationDbContext _context;
 
-        public UserAnswerRepository(ApplicationContext applicationContext)
+        public UserAnswerRepository(ApplicationDbContext context)
         {
-            this._context = applicationContext;
+            _context = context;
         }
 
         public async Task Delete(object id)
         {
-            var entity = await FindByIdAsync(id);
+            var entity = await FindById(id);
 
             if (entity is null)
-                throw new ArgumentException("User answer with the specified ID not found!!!");
+                throw new ArgumentException("User Answer type with the specified ID not found!!!");
 
             _context.UserAnswers.Remove(entity);
         }
@@ -40,22 +40,22 @@ namespace ZnoModelLibrary.Implementation
             return await _context.UserAnswers.ToListAsync();
         }
 
-        public async Task<UserAnswer> FindByIdAsync(object id)
+        public async Task<UserAnswer> FindById(object id)
         {
-            return await _context.UserAnswers.Where(t => t.Id == (int)id).FirstOrDefaultAsync();
+            return await _context.UserAnswers.FirstOrDefaultAsync(t => t.Id == (int)id);
         }
 
-        public async Task InsertAsync(UserAnswer entity)
+        public async Task Insert(UserAnswer entity)
         {
             await _context.UserAnswers.AddAsync(entity);
         }
 
-        public async Task UpdateAsync(UserAnswer entityToUpdate)
+        public async Task Update(UserAnswer entityToUpdate)
         {
-            var entity = await FindByIdAsync(entityToUpdate.Id);
+            var entity = await FindById(entityToUpdate.Id);
 
             if (entity is null)
-                throw new ArgumentException("User answer with the specified ID not found!!!");
+                throw new ArgumentException("User Answer with the specified ID not found!!!");
 
             _context.Entry(entityToUpdate).State = EntityState.Modified;
         }

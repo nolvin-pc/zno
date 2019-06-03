@@ -21,7 +21,7 @@ namespace Zno.DAL.Implementation
 
         public async Task Delete(object id)
         {
-            var entity = await FindByIdAsync(id);
+            var entity = await FindById(id);
 
             if (entity is null)
                 throw new ArgumentException("Subject with the specified ID not found!!!");
@@ -39,19 +39,19 @@ namespace Zno.DAL.Implementation
             return await _context.Subjects.ToListAsync();
         }
 
-        public async Task<Subject> FindByIdAsync(object id)
+        public async Task<Subject> FindById(object id)
         {
             return await _context.Subjects.FirstOrDefaultAsync(s => s.Id == (int)id);
         }
 
-        public async Task InsertAsync(Subject entity)
+        public async Task Insert(Subject entity)
         {
             await _context.Subjects.AddAsync(entity);
         }
 
-        public async Task UpdateAsync(Subject entityToUpdate)
+        public async Task Update(Subject entityToUpdate)
         {
-            var entity = await FindByIdAsync(entityToUpdate.Id);
+            var entity = await FindById(entityToUpdate.Id);
 
             if (entity is null)
                 throw new ArgumentException("Subject with the specified ID not found!!!");
