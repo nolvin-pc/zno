@@ -4429,11 +4429,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\Zno.DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Nolvin\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\Zno.DAL.csproj",
       "projectName": "Zno.DAL",
-      "projectPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\Zno.DAL.csproj",
+      "projectPath": "C:\\Users\\Nolvin\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\Zno.DAL.csproj",
       "packagesPath": "C:\\Users\\Nolvin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\obj\\",
+      "outputPath": "C:\\Users\\Nolvin\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

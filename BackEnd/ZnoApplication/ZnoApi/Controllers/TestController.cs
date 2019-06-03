@@ -11,7 +11,7 @@ namespace Zno.Server.Controllers
     /// <summary>
     /// Контроллер для работы с тестом и его настройками
     /// </summary>
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     [EnableCors("AllowSpecificOrigin")]
     [Produces("application/json")]
     [Route("api/v1/[controller]/[action]")]

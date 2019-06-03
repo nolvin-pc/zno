@@ -6387,11 +6387,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoParser\\Zno.Parser.csproj",
+      "projectUniqueName": "C:\\Users\\Nolvin\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoParser\\Zno.Parser.csproj",
       "projectName": "Zno.Parser",
-      "projectPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoParser\\Zno.Parser.csproj",
+      "projectPath": "C:\\Users\\Nolvin\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoParser\\Zno.Parser.csproj",
       "packagesPath": "C:\\Users\\Nolvin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoParser\\obj\\",
+      "outputPath": "C:\\Users\\Nolvin\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoParser\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6410,8 +6410,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\Zno.DAL.csproj": {
-              "projectPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\Zno.DAL.csproj"
+            "C:\\Users\\Nolvin\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\Zno.DAL.csproj": {
+              "projectPath": "C:\\Users\\Nolvin\\Desktop\\zno\\BackEnd\\ZnoApplication\\ZnoModelLibrary\\Zno.DAL.csproj"
             }
           }
         }

@@ -17,11 +17,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\Tests\\Zno.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Nolvin\\Desktop\\zno\\BackEnd\\ZnoApplication\\Tests\\Zno.Tests.csproj",
       "projectName": "Zno.Tests",
-      "projectPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\Tests\\Zno.Tests.csproj",
+      "projectPath": "C:\\Users\\Nolvin\\Desktop\\zno\\BackEnd\\ZnoApplication\\Tests\\Zno.Tests.csproj",
       "packagesPath": "C:\\Users\\Nolvin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nolvin\\Desktop\\zno-dev\\BackEnd\\ZnoApplication\\Tests\\obj\\",
+      "outputPath": "C:\\Users\\Nolvin\\Desktop\\zno\\BackEnd\\ZnoApplication\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

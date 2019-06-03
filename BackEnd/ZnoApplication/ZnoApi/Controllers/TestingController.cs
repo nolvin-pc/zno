@@ -33,13 +33,13 @@ namespace Zno.Server.Controllers
         /// </summary>
         /// <param name="subjectId">Индентификатор предмета по которому пользователь хочет пройти тест</param>
         /// <returns></returns>
-        //[Authorize(Roles = "User")]
+        [Authorize(Roles = "User")]
         [HttpPost]
         public async Task<IActionResult> CreateNewTest(int subjectId)
         {
             var generatedTestQuestions = new List<Question>();
-            //var currentUser = await _userManager.GetUserAsync(HttpContext.User);
-            var currentUser = await _unitOfWork.Users.FindByLogin("admin@domain.com");
+            var currentUser = await _userManager.GetUserAsync(HttpContext.User);
+            //var currentUser = await _unitOfWork.Users.FindByLogin("admin@domain.com");
 
             // Создаем тест и задаем в него параметры 
             GeneratedTest generatedTest = new GeneratedTest();
@@ -161,7 +161,7 @@ namespace Zno.Server.Controllers
         /// <param name="answers">Ответы на вопрос</param>
         /// <param name="generatedTestId">Идентификатор сгенерированного теста</param>
         /// <returns></returns>
-        //[Authorize(Roles = "User")]
+        [Authorize(Roles = "User")]
         [HttpPost]
         public async Task<IActionResult> SavingAnswer(int questionId, [FromBody]List<Answer> answers, int generatedTestId)
         {
@@ -222,7 +222,7 @@ namespace Zno.Server.Controllers
         /// </summary>
         /// <param name="generatedTestId">Идентификатор сгенерированного теста</param>
         /// <returns>Сумма баллов за тест</returns>
-        //[Authorize(Roles = "User;Admin")]
+        [Authorize(Roles = "User;Admin")]
         [HttpGet]
         public async Task<IActionResult> CompletingTestAndGetResult(int generatedTestId)
         {
